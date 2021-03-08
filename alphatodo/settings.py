@@ -29,7 +29,7 @@ SECRET_KEY = 'tp@lsw3_z#n5g7&34lq@#lh(4!56-(zjsttix**3b3qpt-2wba'
 #export DJANGO_DEBUG=False
 DEBUG = True
 
-ALLOWED_HOSTS = ['gentle-brook-09076.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
