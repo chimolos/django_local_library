@@ -1,1 +1,1 @@
-web: gunicorn alphatodo.wsgi --log-file -
+web: gunicorn localhost.wsgi --log-file -
