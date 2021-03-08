@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'tp@lsw3_z#n5g7&34lq@#lh(4!56-(
 #export DJANGO_DEBUG=False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['agile-retreat-19119.herokuapp.com']
 
 
 # Application definition
