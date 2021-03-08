@@ -26,8 +26,8 @@ import os
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'tp@lsw3_z#n5g7&34lq@#lh(4!56-(zjsttix**3b3qpt-2wba')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
+#export DJANGO_DEBUG=False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
-export DJANGO_DEBUG=False
 
 ALLOWED_HOSTS = []
 
@@ -132,7 +132,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = BASE_DIR / 'staticfiles'  #. os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
