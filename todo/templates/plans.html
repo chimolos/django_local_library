@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} My Scheduler {% endblock title %}
+    
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+    
+{% block banner %} {% include 'bannerindex.html' %} {% endblock banner %}
+
+{% block content %}
+    <section class="tbody">
+        <div class="bodydiv">
+            <div id="top" class="inputbox">
+                <form action="" method="POST">
+                    {% csrf_token %} 
+                    <h2>My Plans for the Year</h2>                   
+                    <div class="">
+                        <div class="">
+                            Your Plans: {{ planform.your_plans }}
+                        </div>
+                        <div class="">
+                            Alternative Plan: {{ planform.alternatives }}
+                        </div>  
+                        <div class="">
+                            <button type="submit" class="addBtn">Add</button>
+                        </div>                      
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock content %}    
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
+    
+    

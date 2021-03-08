@@ -1,0 +1,233 @@
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .all {
+    padding: 50px;
+    background-image: url(../images/cardboard.jpg);
+  }
+  .header{
+    display: grid;
+    grid-template-columns: 20% 75%;
+    align-items: center;
+    justify-items: right;
+    height: 80px;
+    background-image: linear-gradient(to right, hotpink, teal);
+  }
+
+    .header img{
+      height: 60px;
+    }
+
+
+    .header li{
+      display: inline;
+      padding: 0px 20px;
+    }
+
+    .header a{
+      text-decoration: none;
+      color: hotpink;
+      font-size: larger;
+      font-weight: 300;
+    }
+
+    .bana{
+      height: 250px;
+      background-image: url(../images/clock.webp);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .banaindex{
+      height: 500px;
+      background-image: url(../images/year2021.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-origin: content-box;
+    }
+
+    
+  /* Remove margins and padding from the list */
+  .ulist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  /* Style the list items */
+  .ulist li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 20px;
+    font-size: 18px;
+    transition: 0.2s;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  .ulist li:nth-child(odd) {
+    background: peachpuff;
+  }
+  
+  .ulist li:nth-child(even) {
+    background: bisque;
+  }
+
+  /* Darker background-color on hover */
+  .ulist li:hover {
+    background: #ddd;
+  }
+  
+  /* When clicked on, add a background color and strike out text */
+  .ulist li.checked {
+    background: hotpink;
+    color: seagreen;
+    text-decoration: line-through;
+  }
+  
+  .ulist li.uncheck {
+    color: teal;
+  }
+
+  /* Add a "checked" mark when clicked on */
+  .ulist li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+
+  .split{
+    display: grid;
+    grid-template-columns:  20% 30% 10% 10% 20% 10%;
+    grid-gap: 10px;
+  }
+
+  .ulist a {
+      text-decoration: none;
+  }
+  
+  /* Style the close button */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .mylist {
+    padding: 30px 40px;
+    background-image: linear-gradient(to right,teal,hotpink, antiquewhite, seagreen, antiquewhite,hotpink, teal);
+  }
+  
+  /* Style the header */
+  .inputbox {
+    background-color: teal;
+    padding: 50px 200px;
+    color: white;
+    text-align: center;
+    /* height: 1500px;  */
+  }
+  
+  /* Clear floats after the header */
+  .inputbox:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+
+
+  /* styling register page  */
+
+  .container{
+    background-color: palevioletred;
+  }
+
+  .cool{
+    background-image: linear-gradient(to right, teal, hotpink, seagreen, teal);
+    height: 500px;
+    padding: 100px;
+  }
+
+  .form-group{
+    background-color: burlywood;
+    height: 50px;
+  }
+
+  .footer{
+    height: 250px;
+  }
+
+  .footerd{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-column: 100px;
+    align-items: center;
+    justify-items: center;
+    padding: 50px;
+    background-color: rgb(243, 240, 235);
+  }
+
+  .footerd img{
+    height: 100px;
+  }
+  
+  .footerp{
+    padding: 40px 100px;
+    background-image: linear-gradient(to bottom,rgb(243, 240, 235) , teal);
+    text-align: center;
+    font-size: x-large;
+    font-weight: 500;
+  }
+
+  
+  .generate {
+    display: grid;
+    grid-template-rows: repeat(4, 25%);
+  }
+  

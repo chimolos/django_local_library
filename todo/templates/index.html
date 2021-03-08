@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} My Scheduler {% endblock title %}
+    
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+    
+{% block banner %} {% include 'bannerindex.html' %} {% endblock banner %}
+
+{% block content %}
+    <section class="tbody">
+        <div class="bodydiv">
+            <div id="top" class="inputbox">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <h2>My Schedule for the day</h2>
+                    <div class="generate">
+                        <div class="">
+                            {{ cform.myCategory }}
+                            <button type="submit" class="addBtn">Add</button>
+                        </div>                        
+                    </div>
+                </form>
+                <form action="" method="POST">
+                    {% csrf_token %}                    
+                    <div class="generate">
+                        <div class="">
+                            {{ form.title }}
+                            <button type="submit" class="addBtn">Add</button>
+                        </div>
+                        <div class="">
+                            Category: {{ form.category }}
+                        </div>
+                        <div class="">
+                            Selector: {{ form.decision }}
+                        </div>
+                        <div class="">
+                            Description: {{ form.description }}
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+            <div class="mylist">
+                <div id="chidi" class="split">
+                    <div><h3 class="note">Title</h3></div>
+                    <div><h3 class="note">Description</h3></div>
+                    <div><h3 class="note">Category</h3></div>
+                    <div><h3 class="note">Decision</h3></div>
+                    <div><h3 class="note">Date Created</h3></div>
+                    <div><h3 class="note">Delete</h3></div>
+                </div>
+                <ul class="ulist">                    
+                    {% for item in todos %}
+                    
+                        {% if item.completed_status %}
+                            <li class="checked">                                                              
+                                <div id="chidi" class="split">                                    
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.title }}</h3></a></div>
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.description }}</h3></a></div>
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.category }}</h3></a></div>
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.decision }}</h3></a></div>
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.date_created }}</h3></a></div>
+                                    <div><a href="{% url 'deletetodo' item.id %}"><span class="close">Delete</span></a></div>
+                                </div>
+                            </li>
+                        {% else %}
+                            <li class="uncheck">                                                        
+                                <div class="split">                                    
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.title }}</h3></a></div>
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.description }}</h3></a></div>
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.category }}</h3></a></div>
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.decision }}</h3></a></div>
+                                    <div><a href="{% url 'completeit' item.id %}"><h3 class="note">{{ item.date_created }}</h3></a></div>
+                                    <div><a href="{% url 'deletetodo' item.id %}"><span class="close">X</span></a></div>
+                                </div>
+                            </li>
+                        {% endif %}
+                            
+                    {% endfor %}                        
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock content %}    
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
+    
+    

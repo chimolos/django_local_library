@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} User Profile {% endblock title %}
+    
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+    
+{% block content %}  
+    <section>
+        <div class="container">
+            <h2>{{request.user}} Profile</h2>
+            <p>
+                Name: {{request.user.first_name}} {{request.user.last_name}}
+            </p>
+            <p>
+                Address: {{request.user.profile.address}}
+            </p>
+            <p>
+                <!-- Plans: {{request.user.profile.plans}} -->
+            </p>
+            <hr>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                    {{ userforem.as_p }}
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div>
+            
+            {% if plan %}
+                
+                {% for x in myplan %}
+                    <ul>
+                        <li> {{ x.your_plans}}</li>
+                        <li>{{ x.alternatives}}</li>
+                    </ul>
+                {% endfor %}
+                    
+            {% endif %}
+                
+        </div>
+    </section>
+{% endblock content %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

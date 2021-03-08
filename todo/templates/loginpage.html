@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} User Login Page {% endblock title %}
+    
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+    
+{% block content %}  
+    <section class="cool">
+        <div class="container">
+            <h2>Login</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <button type="submit" class="addBtn">Submit</button>
+            </form>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

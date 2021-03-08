@@ -1,0 +1,39 @@
+{% load static %}
+
+<div class="header">
+    <div><a href="{% url 'index' %}"><img src="{% static '' %}images/todo-list.png" alt=""></a></div>
+    <div class="navbar">
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">Notepad</a>
+            </li>
+            <li>
+                <a href="{% url 'appraisal' %}">Appraisal</a>
+            </li>
+            <li>
+                <a href="{% url 'plans' %}">Plans</a>
+            </li>
+
+            
+            {% if request.user.is_authenticated %}
+                <li >
+                    <li class="dropdownn" id="hover-dropdown-narv">Welcome, <a class="dropbtnn" href="{% url 'userprofile' %}">{{request.user}}</a> 
+                        <ul class='dropdownn1' id='myDropdown'>                            
+                        <li class="open-button" onclick="openForm()"><a href="{% url 'logoutpage' %}">Log Out</a></li>                          
+                        </ul>     
+                    <li >                                  
+                </li>
+                <!-- <li>
+                    <a href="{% url 'logoutpage' %}">Log Out</a>
+                </li> -->
+            {% else %}
+                <li>
+                    <a href="{% url 'registerpage' %}">Register</a>
+                </li>
+                <li>
+                    <a href="{% url 'loginpage' %}">Login</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

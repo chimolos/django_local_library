@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}  
+    <div class="form-popup" id="myForm">
+        <form action="" class="form-container">
+        <h1>Are You Sure to Logout</h1>                
+        <a href="{% url 'signout' %}"><button type="submit" class="btn">Logout</button></a>
+        </form>
+    </div>
+    <a href="{% url 'signout' %}">Logout</a>     
+{% endblock content %}
+
+<script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }    
+</script>

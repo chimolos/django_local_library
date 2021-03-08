@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} My Scheduler {% endblock title %}
+    
+{% block navbar %} {% include 'navbar.html' %} {% endblock navbar %}
+    
+{% block banner %} {% include 'bannerindex.html' %} {% endblock banner %}
+
+{% block content %}
+    <section class="tbody">
+        <div class="bodydiv">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <h2>My Appraisal</h2>                   
+                    <div class="">
+                        <div class="">
+                            Rate Your Experience: {{ apprform.rate }}
+                        </div>
+                        <div class="">
+                            Experience: {{ apprform.experience }}
+                        </div>
+                        <div class="">
+                            Your Thoughts: {{ apprform.thoughts }}
+                        </div>
+                        <div class="">
+                            <button type="submit" class="addBtn">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock content %}    
+
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
+    
+    
