@@ -28,6 +28,7 @@ SECRET_KEY = 'tp@lsw3_z#n5g7&34lq@#lh(4!56-(zjsttix**3b3qpt-2wba'
 # DEBUG = True
 #export DJANGO_DEBUG=False
 DEBUG = False
+#DEBUG = True
 
 ALLOWED_HOSTS = ['gentle-brook-09076.herokuapp.com', 'localhost']
 
@@ -127,7 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = [(os.path.join(BASE_DIR, 'static'))],
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
